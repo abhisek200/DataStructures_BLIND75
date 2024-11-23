@@ -51,7 +51,7 @@ public class _14_LongestCommonSubsequence {
 
     // 2. Memoization
     /*
-     * Memoization:
+     * :Memoization
      * - Time Complexity: O(m * n)
      *   - Each unique (i, j) pair is computed only once and stored in the memo table.
      * - Space Complexity: O(m * n)
@@ -92,14 +92,14 @@ public class _14_LongestCommonSubsequence {
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
                 if (a.charAt(i - 1) == b.charAt(j - 1)) {
-                    dp[i][j] = 1 + dp[i - 1][j - 1]; // Characters match
+                    dp[i][j] = 1 + dp[i - 1][j - 1]; // Characters match, here i am doing top to bottom approach
                 } else {
-                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]); // Characters don't match
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]); // Characters don't match, check adjacent matrix values
                 }
             }
         }
 
         // Return the LCS length
-        return dp[m][n];
+        return dp[m][n]; //return last position, as everything will we maxed till we reach to bottom
     }
 }
