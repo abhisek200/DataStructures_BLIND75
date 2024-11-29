@@ -17,15 +17,15 @@ public class _21_JumpGame {
 
     static boolean canJump(int arr[]) {
         int length = arr.length;
-        int maxIndex = arr[0];
+        int maxIndexValue = arr[0];
         for (int i = 0; i < arr.length; i++) {
-            if (i > maxIndex) {
+            if (i > maxIndexValue) {
                 return false;
             }
-            if (maxIndex == arr.length - 1) {
+            if (maxIndexValue >= arr.length - 1) {
                 return true;
             }
-            maxIndex = Math.max(i + arr[i], maxIndex);
+            maxIndexValue = Math.max(i + arr[i], maxIndexValue);
         }
         return true;
     }

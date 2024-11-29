@@ -18,5 +18,7 @@ public class Main {
         graph.addUndirectedEdge(3, 4); // D->E
         graph.addUndirectedEdge(2, 3); // C->D
         System.out.println(graph.toString());
+
+        graph.bfs();
     }
 }

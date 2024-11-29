@@ -26,7 +26,6 @@ public class _1_practice {
         if (sides.length != 2 || sides[0].trim().isEmpty() || sides[1].trim().isEmpty()) {
             return false; // Ensure both LHS and RHS are non-empty
         }
-
         return isValidExpression(sides[0].trim()) && isValidExpression(sides[1].trim());
     }
 
