@@ -1,4 +1,4 @@
-package com.leetcode;// Java program to implement LRU Least Recently Used) using
+package com.leetcode.Practice;// Java program to implement LRU Least Recently Used) using
 // Built-in Doubly linked list
 
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.Practice;
 
 //Validate if the equation is syntactically correct.
 //
