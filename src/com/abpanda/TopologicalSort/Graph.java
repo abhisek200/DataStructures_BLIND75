@@ -114,15 +114,13 @@ public class Graph {
                 topologicalVisit(node, stack);
             }
         }
-
-
         //print
         while (!stack.isEmpty()) {
             System.out.print(stack.pop().name + " ");
         }
     }
 
-    /*BFS SSSPP*/ //Single source shortest path problem
+    /*BFS SSSPP*/ //Single source the shortest path problem
     void pathPrint(GraphNode node) {
         if (node.parent != null) {
             pathPrint(node.parent);
