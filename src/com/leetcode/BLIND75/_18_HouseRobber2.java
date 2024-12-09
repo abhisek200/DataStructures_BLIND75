@@ -1,4 +1,4 @@
-package com.abpanda.BLIND75;
+package com.leetcode.BLIND75;
 
 public class _18_HouseRobber2 {
     public static void main(String[] args) {

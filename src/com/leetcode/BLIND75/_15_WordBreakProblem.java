@@ -1,4 +1,4 @@
-package com.abpanda.BLIND75;
+package com.leetcode.BLIND75;
 
 import java.util.List;
 /*    Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a

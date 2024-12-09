@@ -1,4 +1,4 @@
-package com.abpanda.BLIND75; /* Created by abpanda on 21-11-2024 */
+package com.leetcode.BLIND75; /* Created by abpanda on 21-11-2024 */
 
 /*
 Input: text1 = "abcde", text2 = "ace"

@@ -1,4 +1,4 @@
-package com.abpanda.BLIND75;
+package com.leetcode.BLIND75;
 
 public class _11_ClimbingStairs {
     public static void main(String[] args) {
