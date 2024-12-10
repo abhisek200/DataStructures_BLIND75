@@ -6,17 +6,54 @@ public class _21_MergeTwoSortedLists {
     public static class ListNode {
         int val;
         ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 
     // Function to merge two sorted linked lists
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         // Placeholder for your logic implementation
 
-        // Return the merged list head
-        return list1;  // This is just a placeholder, implement your merging logic here
+        /**
+         * Example
+         * l1 : 1 -> 2 -> 3
+         *      l1
+         * l2 : 1->2->4->5->7->8
+         *      l2
+         * lNew : 0 -> 1 -> 2 -> 3 -> 4..
+         * */
+
+        ListNode headAbstarct = new ListNode(0);
+        ListNode realList = headAbstarct;
+
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                realList.next = list1;
+                list1 = list1.next;
+            } else {
+                realList.next = list2;
+                list2 = list2.next;
+            }
+            realList = realList.next;
+        }
+        if (list1 == null) {
+            realList.next = list2;
+        }
+        if (list2 == null) {
+            realList.next = list1;
+        }
+        return headAbstarct.next;
+
     }
 
     // Helper function to print the list for testing purposes
