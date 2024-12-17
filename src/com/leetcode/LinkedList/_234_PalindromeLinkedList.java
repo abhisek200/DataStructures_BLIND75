@@ -6,17 +6,51 @@ public class _234_PalindromeLinkedList {
     public static class ListNode {
         int val;
         ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 
     // Function to check if the linked list is a palindrome
     public boolean isPalindrome(ListNode head) {
         // Placeholder for your logic implementation
 
-        // Return true or false based on whether the list is a palindrome
-        return false;  // This is just a placeholder
+        //Stack approach with 1/2 Length, iterate and, pop and check with next element
+        //2 pointers approach with 1/2 Length, iterate and, check with next element
+
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        ListNode prev = null;
+        while (slow != null) {
+            ListNode next = slow.next;
+            slow.next = prev;
+            prev = slow;
+            slow = next;
+        }
+
+        ListNode current = head;
+        //now iterate
+        while (prev != null && current != null) {
+            if (prev.val != current.val) return false;
+            prev = prev.next;
+            current = current.next;
+        }
+
+        return true;
     }
 
     // Helper function to print the list (for testing purposes)
