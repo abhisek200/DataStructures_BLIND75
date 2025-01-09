@@ -6,8 +6,14 @@ public class _108_ConvertSortedArrayToBST {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
@@ -16,8 +22,20 @@ public class _108_ConvertSortedArrayToBST {
     }
 
     public TreeNode sortedArrayToBST(int[] nums) {
-        // Placeholder for the logic to convert sorted array to BST
-        return null; // Replace this with the actual implementation
+        return recurser(nums, 0, nums.length - 1);
+    }
+
+    public TreeNode recurser(int nums[], int left, int right) {
+        if (left > right) {
+            return null;
+        }
+        int mid = (left + (right)) / 2;
+        TreeNode node = new TreeNode(nums[mid]);
+        node.left = recurser(nums, left, mid - 1);
+        node.right = recurser(nums, mid + 1, right);
+
+        return node;
+
     }
 
     public static void main(String[] args) {
